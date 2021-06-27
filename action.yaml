@@ -1,5 +1,8 @@
 name: Build and Scan Image
 description: "Build and scan Dockerfile and container image by hadolint, dockle, trivy, docker scan"
+branding:
+  icon: box
+  color: blue
 inputs:
   tag:
     description: Image name and optionally tag in "name:tag" format

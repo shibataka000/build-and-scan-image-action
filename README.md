@@ -7,7 +7,7 @@ Build and scan Dockerfile and container image by following tools.
 - [hadolint](https://github.com/hadolint/hadolint)
 - [dockle](https://github.com/goodwithtech/dockle)
 - [trivy](https://github.com/aquasecurity/trivy)
-- [docker scan](https://github.com/docker/scan-cli-plugin)
+- [docker scan](https://github.com/docker/scan-cli-plugin) (option)
 
 ## Usage
 

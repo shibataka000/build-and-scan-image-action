@@ -1,6 +1,6 @@
 # Build and Scan Image Action
 
-![test workflow](https://github.com/shibataka000/build-and-scan-image-action/actions/workflows/test.yaml/badge.svg)
+[![test workflow](https://github.com/shibataka000/build-and-scan-image-action/actions/workflows/test.yaml/badge.svg)](https://github.com/shibataka000/build-and-scan-image-action/actions/workflows/test.yaml)
 
 Build and scan Dockerfile and container image by following tools.
 

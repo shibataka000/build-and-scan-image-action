@@ -1,4 +1,4 @@
-name: build-and-scan-image
+name: Build and Scan Image
 description: "Build and scan Dockerfile and container image by hadolint, dockle, trivy, docker scan"
 inputs:
   tag:

@@ -24,7 +24,7 @@ inputs:
     required: false
     default: "2.5.0"
   hadolint-severity:
-    description: Fail step if rules with a severity above this level are violated (default "info")
+    description: Fail step if rules with a severity above this level are violated. Acceptable value is one of (error|warning|info|style|ignore|none). (default "info")
     required: false
     default: info
   dockle-enable:
@@ -36,7 +36,7 @@ inputs:
     required: false
     default: "0.3.15"
   dockle-severity:
-    description: Fail step if checkpoints with a severity above this level are violated (default "WARN")
+    description: Fail step if checkpoints with a severity above this level are violated. Acceptable value is one of (INFO|WARN|FATAL). (default "WARN")
     required: false
     default: WARN
   trivy-enable:
@@ -48,11 +48,11 @@ inputs:
     required: false
     default: "0.18.3"
   trivy-severity:
-    description: Fail step if image has vulnerabilities with a severity same as this level (default "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL")
+    description: Fail step if image has vulnerabilities with a severity same as this level. Acceptable values are some of (UNKNOWN|LOW|MEDIUM|HIGH|CRITICAL). (default "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL")
     required: false
     default: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
   docker-scan-enable:
-    description: Enable scanning image by docker scan (default "false")
+    description: Enable scanning image by docker scan. If enabled, "docker-scan-snyk-token" must be also set. (default "false")
     required: false
     default: "false"
   docker-scan-version:
@@ -60,11 +60,11 @@ inputs:
     required: false
     default: "0.8.0"
   docker-scan-severity:
-    description: Fail step if image has vulnerabilities with a severity above this level exist (default "low")
+    description: Fail step if image has vulnerabilities with a severity above this level exist. Acceptable value is one of (low|medium|high). (default "low")
     required: false
     default: low
   docker-scan-snyk-token:
-    description: Snyk API Token. This is necessary if docker scan is enabled. (default "")
+    description: Snyk API Token. This is necessary if "docker-scan-snyk-token" is "true". (default "")
     required: false
     default: ""
 runs:

@@ -1,1 +1,1 @@
-# build-image-action
+# build-and-scan-image-action

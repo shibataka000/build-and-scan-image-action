@@ -13,7 +13,7 @@ jobs:
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
+        run: |
           CURRENT_TAG=$(git tag --sort=-creatordate | sed -n 1p)
           PREVIOUS_TAG=$(git tag --sort=-creatordate | sed -n 2p)
           RELEASE_NOTE=$(git log --oneline --pretty=format:"* %h %s" ${PREVIOUS_TAG}..${CURRENT_TAG})

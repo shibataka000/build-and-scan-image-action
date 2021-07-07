@@ -51,6 +51,10 @@ inputs:
     description: Fail step if image has vulnerabilities with a severity same as this level. Acceptable values are some of (UNKNOWN|LOW|MEDIUM|HIGH|CRITICAL). (default "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL")
     required: false
     default: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
+  trivy-vuln-type:
+    description: Vulnerability types which trivy detect to. If you use this action for commercial usage, you MUST set this option as "os" and use trivy without non-commercial data sources. Acceptable value is comma-separated list of (os|library). (default "os")
+    required: false
+    default: os
   docker-scan-enable:
     description: Enable scanning image by docker scan. If enabled, "docker-scan-snyk-token" must be also set. (default "false")
     required: false
@@ -119,7 +123,7 @@ runs:
         sudo mv /tmp/trivy /usr/local/bin/
 
         # Scan image by dockle
-        trivy image --exit-code 1 --severity "${{ inputs.trivy-severity }}" --no-progress "${{ inputs.tag }}"
+        trivy image --exit-code 1 --severity "${{ inputs.trivy-severity }}" --no-progress --vuln-type "${{ inputs.trivy-vuln-type }}" "${{ inputs.tag }}"
 
         echo "::endgroup::"
       fi

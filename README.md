@@ -66,6 +66,11 @@ See [action.yaml](./action.yaml) .
     # Acceptable values are some of (UNKNOWN|LOW|MEDIUM|HIGH|CRITICAL)
     trivy-severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
 
+    # Vulnerability types which trivy detect to (default "os")
+    # Acceptable value is comma-separated list of (os|library)
+    # If you use this action for commercial usage, you MUST set this option as "os" and use trivy without non-commercial data sources.
+    trivy-vuln-type: os
+
     # Enable scanning image by docker scan (default "false")
     # If enabled, "docker-scan-snyk-token" must be also set. 
     docker-scan-enable: "false"
@@ -92,3 +97,11 @@ Tools ([hadolint](https://github.com/hadolint/hadolint), [dockle](https://github
 - Using inline comment (hadolint only)
 
 See document of each tools for more details.
+
+### Commercial usage
+Some of trivy's data sources, especially for programing language, are only licensed for non-commercial usage. See following sites for more details.
+
+- https://github.com/aquasecurity/trivy/blob/main/docs/vuln-detection/data-source.md
+- https://github.com/aquasecurity/trivy/issues/491
+
+If you use this action for commercial usage, you MUST set `trivy-vuln-type` option as `os` and use trivy without non-commercial data sources.

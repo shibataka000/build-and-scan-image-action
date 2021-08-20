@@ -1,4 +1,4 @@
-name: Build and Scan Image
+name: Build and Scan Image (Archived)
 description: "Build and scan Dockerfile and container image by hadolint, dockle, trivy, docker scan"
 branding:
   icon: box
@@ -73,7 +73,7 @@ inputs:
     default: ""
 runs:
   using: composite
-  steps: 
+  steps:
   - name: Scan Dockerfile by hadolint
     run: |
       if [ "${{ inputs.hadolint-enable }}" == "true" ]; then
